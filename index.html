@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Calculadora de Ángulos de Bandeja</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Calculadora de Ángulos de Bandeja</h1>
+  <div class="button-container">
+
+    <!-- Section 1 -->
+    <div class="menu-section">
+      <div class="menu-title">Corte de bandeja a nivel</div>
+      <img src="Images/bandeja_1.png" alt="Imagen corte nivel" class="menu-image" />
+      <div class="modular-display">
+        <input type="number" name="x1" placeholder="Introduce Largo X (mm)" />
+        <input type="number" name="y1" placeholder="Introduce Alto Y (mm)" />
+        <input type="number" name="g1" placeholder="Introduce GROSSOR G (mm)" />
+        <img src="Images/bandeja_ref_1.png" alt="Imagen adicional nivel" class="menu-image" />
+        <div class="result-label">A Corte=</div>
+        <div class="result-label">B Recorrido=</div>
+        <button class="calculate-button">CALCULAR</button>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="menu-section">
+      <div class="menu-title">Corte de bandeja curva 45°</div>
+      <img src="Images/Bandeja_2.png" alt="Imagen corte curva 45°" class="menu-image" />
+      <div class="modular-display">
+        <input type="number" name="x2" placeholder="Introduce Largo X (mm)" />
+        <input type="number" name="y2" placeholder="Introduce Alto Y (mm)" />
+        <input type="number" name="g2" placeholder="Introduce GROSSOR G (mm)" />
+        <img src="Images/bandeja_ref_2.png" alt="Imagen adicional curva" class="menu-image" />
+        <div class="result-label">A Corte=</div>
+        <div class="result-label">B Corte=</div>
+        <div class="result-label">C Recorrido=</div>
+        <div class="result-label">D Recorrido=</div>
+        <button class="calculate-button">CALCULAR</button>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="menu-section">
+      <div class="menu-title">Corte simple de bandeja</div>
+      <img src="Images/Bandeja_3.png" alt="Imagen corte simple" class="menu-image" />
+      <div class="modular-display">
+        <input type="number" name="x3" placeholder="Introduce Largo B (mm)" />
+        <input type="number" name="angle3" placeholder="Introduce ANGULO (º)" />
+        <input type="number" name="g3" placeholder="Introduce GROSSOR G (mm)" />
+        <img src="Images/bandeja_ref_3.png" alt="Imagen adicional simple" class="menu-image" />
+        <div class="result-label">A Corte=</div>
+        <div class="result-label">B Recorrido=</div>
+        <div class="result-label">C Recorrido=</div>
+        <div class="result-label">D Recorrido=</div>
+        <button class="calculate-button">CALCULAR</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registrado', reg))
+          .catch(err => console.log('Fallo al registrar Service Worker', err));
+      });
+    }
+  </script>
+</body>
+</html>
